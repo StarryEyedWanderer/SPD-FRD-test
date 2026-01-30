@@ -1,0 +1,29 @@
+[project]
+name = "spd-t4-threshold-test"
+version = "0.1.0"
+description = "SPD/FRD Test T4 Quantity→Quality thresholded transitions"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "numpy",
+  "pandas",
+  "matplotlib",
+  "typer",
+  "pydantic",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+spd-t4 = "spd_t4.cli:app"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
